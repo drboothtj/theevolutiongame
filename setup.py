@@ -32,12 +32,17 @@ def setup_player():
 
 def setup_npcs(number):
     '''
+    spawn initial npcs
+        arguments:
+            number: number to spawn on initialisation
+        returns:
+            npcs: list of Character objects for spawning
     '''
     npc_width = 10 #make global for editing
     npc_height = 10 #make global for editing
     npcs = []
     for spawn in range(0, number):
-        npc = go.Character(
+        npc = go.Npc(
             random.randint(0, SCREEN_WIDTH),
             random.randint(0, SCREEN_HEIGHT),
             npc_width,
@@ -47,7 +52,3 @@ def setup_npcs(number):
         )
         npcs.append(npc)
     return npcs
-        
-
-    
-
